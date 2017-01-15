@@ -67,12 +67,25 @@ WSGI_APPLICATION = 'hireno.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db_hayesmage',
+        'USER': 'postgres',
+        'PASSWORD': 'kimchi',
+        'HOST': 'localhost',
+        'PORT': '',
+        'CONN_MAX_AGE': 600
     }
 }
 
-
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 

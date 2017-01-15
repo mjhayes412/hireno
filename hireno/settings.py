@@ -1,5 +1,5 @@
-from unipath import Path
 import os
+from unipath import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).ancestor(2)
 SECRET_KEY = 'rmgd0jb(8s^4u4=p==!%thueqs9)1^#s(7+6i1f01#snw#l3%!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['104.236.60.200', 'localhost']
 
